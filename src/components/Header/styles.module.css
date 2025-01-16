@@ -3,7 +3,7 @@
   height: 60px;
   position: fixed;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: red;
 }
 
 .container {
@@ -14,14 +14,52 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 30px;
+  padding: 0 25px;
 }
 
 .img {
-  width: 70px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
 }
 
 .text {
   font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 70px;
+  }
+
+  .container {
+    padding: 0 40px;
+  }
+
+  .img {
+    width: 110px;
+    height: 40px;
+  }
+
+  .text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    height: 80px;
+  }
+
+  .container {
+    padding: 0 60px;
+  }
+
+  .img {
+    width: 150px;
+    height: 50px;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
 }
