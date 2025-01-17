@@ -18,11 +18,6 @@
   padding: 0 25px;
 }
 
-.img {
-  width: 80px;
-  height: 40px;
-}
-
 .text {
   font-size: 1.2rem;
 }
@@ -34,11 +29,6 @@
 
   .container {
     padding: 0 40px;
-  }
-
-  .img {
-    width: 110px;
-    height: 40px;
   }
 
   .text {
@@ -53,11 +43,6 @@
 
   .container {
     padding: 0 60px;
-  }
-
-  .img {
-    width: 150px;
-    height: 50px;
   }
 
   .text {

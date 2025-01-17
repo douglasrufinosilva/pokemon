@@ -1,7 +1,42 @@
-.imageContainer {}
+.container {
+  max-width: 280px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  overflow: hidden;
 
-.cardBody {}
+  box-shadow: 0px 1px 4px 0px #89838370;
+}
 
-.label {}
+.imageContainer {
+  height: 200px;
+  width: auto;
+  background-color: gray;
+}
 
-.infoLabel {}
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cardBody {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.infoLabel {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}

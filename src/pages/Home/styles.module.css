@@ -5,10 +5,22 @@
   margin: 0 auto;
   background-color: #FFFFFF;
 
-  padding: 100px 0 0;
+  padding: 100px 25px 0;
 }
 
 .inputContainer {
   display: flex;
   justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .main {
+    padding: 100px 40px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: 100px 60px 0;
+  }
 }

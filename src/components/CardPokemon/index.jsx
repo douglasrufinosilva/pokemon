@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 
 const CardPokemon = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.imageContainer}>
         <img src="/logo.svg" alt="" />
       </div>
