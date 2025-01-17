@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
-require('dotenv').config()
 import { createContext, useEffect, useState } from 'react'
 
 export const PokemonContext = createContext()
@@ -14,7 +13,7 @@ const PokemonProvider = ({ children }) => {
   const [pokemonsPerPage] = useState(20)
 
   useEffect(() => {
-    const api_key = process.env.API_KEY
+    const API_KEY = process.env.API_KEY
     setLoading(true)
 
     const filterQuery = filter ? `&q=name:${filter}` : ''
@@ -23,7 +22,7 @@ const PokemonProvider = ({ children }) => {
       `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${pokemonsPerPage}${filterQuery}`,
       {
         headers: {
-          'X-Api-Key': api_key,
+          'X-Api-Key': API_KEY,
         },
       }
     )
