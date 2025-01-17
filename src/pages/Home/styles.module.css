@@ -1,5 +1,5 @@
 .loading {
-  padding: 14rem 30rem;
+  padding: 10rem 2rem;
   font-size: 1.6rem;
 }
 
@@ -79,6 +79,11 @@
 }
 
 @media (min-width: 1024px) {
+  .loading {
+    padding: 14rem 30rem;
+    font-size: 1.6rem;
+  }
+
   .main {
     padding: 130px 60px 0;
   }

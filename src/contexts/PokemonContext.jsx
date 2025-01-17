@@ -10,23 +10,23 @@ const PokemonProvider = ({ children }) => {
   const [page, setPage] = useState(1)
   const [filter, setFilter] = useState('')
   const [totalPokemons, setTotalPokemons] = useState(0)
-  const [pokemonsPerPage] = useState(20)
+  const [pokemonsPerPage] = useState(24)
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY
 
     setLoading(true)
 
-    const filterQuery = filter ? `&q=name:${filter}` : ''
+    let url = `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${pokemonsPerPage}`
+    if (filter) {
+      url += `&q=name:${filter}`
+    }
 
-    fetch(
-      `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${pokemonsPerPage}${filterQuery}`,
-      {
-        headers: {
-          'X-Api-Key': API_KEY,
-        },
-      }
-    )
+    fetch(url, {
+      headers: {
+        'X-Api-Key': API_KEY,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setPokemons(data.data)

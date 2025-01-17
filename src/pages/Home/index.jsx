@@ -36,7 +36,6 @@ const Home = () => {
     page,
     totalPokemons,
     changePage,
-    changeFilter,
     pokemonsPerPage,
   } = useContext(PokemonContext)
 
