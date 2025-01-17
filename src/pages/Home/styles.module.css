@@ -3,14 +3,40 @@
   height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   padding: 100px 25px 0;
 }
 
+.main a {
+  cursor: pointer;
+}
+
 .inputContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  row-gap: 2rem;
+}
+
+.totalLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  margin-bottom: 3rem;
 }
 
 @media (min-width: 769px) {
