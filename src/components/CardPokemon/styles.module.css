@@ -1,32 +1,35 @@
-.container {
-  max-width: 280px;
+.cardContainer {
+  width: 100%;
   height: auto;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   overflow: hidden;
 
   box-shadow: 0px 1px 4px 0px #89838370;
 }
 
 .imageContainer {
-  height: 200px;
+  height: 90px;
   width: auto;
+  overflow: hidden;
   background-color: gray;
 }
 
 .imageContainer img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  position: relative;
+  top: 0px;
+  scale: 1.2;
 }
 
 .cardBody {
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 25px;
+  padding: 0 10px;
 }
 
 .label {
@@ -38,5 +41,11 @@
 .infoLabel {
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 10px;
+}
+
+.infoLabel img {
+  width: 20px;
+  height: auto;
 }

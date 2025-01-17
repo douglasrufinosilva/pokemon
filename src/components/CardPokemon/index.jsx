@@ -1,19 +1,20 @@
+/* eslint-disable react/prop-types */
 import styles from './styles.module.css'
 
-const CardPokemon = () => {
+const CardPokemon = ({ pokemon }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.cardContainer} key={pokemon.id}>
       <div className={styles.imageContainer}>
-        <img src="/logo.svg" alt="" />
+        <img src={pokemon.images.large} alt={pokemon.name} />
       </div>
       <div className={styles.cardBody}>
         <div className={styles.label}>
-          <h3>Bulbasaur</h3>
-          <p>Tipo planta</p>
+          <h3>{pokemon.name}</h3>
+          <span>{pokemon.rarity ? pokemon.rarity : 'Sem informação'}</span>
         </div>
         <div className={styles.infoLabel}>
-          <img src="/iconPlanta.png" alt="" />
-          <span>Raro</span>
+          <img src={pokemon.set.images.symbol} alt={pokemon.set.name} />
+          <span>{pokemon.types[0] ? pokemon.types[0] : 'Sem informação'}</span>
         </div>
       </div>
     </div>
