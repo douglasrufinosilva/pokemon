@@ -4,9 +4,9 @@ const InputSearch = () => {
   return (
     <div className={styles.container}>
       <input className={styles.input} type="text" placeholder='Pesquise um pokemon' />
-      <button>
+      <div>
         <img src='/searchIcon.svg' />
-      </button>
+      </div>
     </div>
   )
 }
