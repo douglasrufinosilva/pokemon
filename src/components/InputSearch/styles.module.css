@@ -1,11 +1,11 @@
 .container {
-  width: 30%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 5px 5px 25px;
 
-  border: 1px solid #ABABAB;
+  border: 1px solid #ababab;
   border-radius: 36px;
 }
 
@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #E1E9EF;
+  background-color: #e1e9ef;
   outline: none;
   border: 0;
   border-radius: 50%;
