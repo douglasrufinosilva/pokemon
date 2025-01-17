@@ -13,7 +13,8 @@ const PokemonProvider = ({ children }) => {
   const [pokemonsPerPage] = useState(20)
 
   useEffect(() => {
-    const API_KEY = process.env.API_KEY
+    const API_KEY = import.meta.env.VITE_API_KEY
+
     setLoading(true)
 
     const filterQuery = filter ? `&q=name:${filter}` : ''

@@ -11,7 +11,6 @@ import InputSearch from '../../components/InputSearch'
 import InputFilter from '../../components/InputFilter'
 import CardPokemon from '../../components/CardPokemon'
 import styles from './styles.module.css'
-import 'dotenv/config'
 
 const style = {
   position: 'absolute',
@@ -43,7 +42,7 @@ const Home = () => {
 
   useEffect(() => {
     if (pokemonId) {
-      const API_KEY = process.env.API_KEY
+      const API_KEY = import.meta.env.VITE_API_KEY
 
       fetch(`https://api.pokemontcg.io/v2/cards/${pokemonId}`, {
         headers: {
