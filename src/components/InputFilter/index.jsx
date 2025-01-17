@@ -65,12 +65,10 @@ export default function InputFilter() {
 
             return selected.join(', ')
           }}
+          sx={{ fontSize: '1.4rem' }}
           MenuProps={MenuProps}
           inputProps={{ 'aria-label': 'Without label' }}
         >
-          <MenuItem disabled value="">
-            <em>Placeholder</em>
-          </MenuItem>
           {names.map((name) => (
             <MenuItem
               key={name}

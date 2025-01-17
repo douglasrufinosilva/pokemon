@@ -27,4 +27,20 @@
   background-color: transparent;
   outline: none;
   border: 0;
+
+  &::placeholder {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 50%;
+  }
 }

@@ -36,6 +36,10 @@
     padding: 0 40px;
   }
 
+  .container img {
+    height: 40px;
+  }
+
   .text {
     font-size: 1.4rem;
   }

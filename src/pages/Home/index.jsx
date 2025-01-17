@@ -75,6 +75,10 @@ const Home = () => {
 
   const handleClose = () => setOpen(false)
 
+  if (loading) {
+    return <div className={styles.loading}>Carregando Pokemons...</div>
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.inputContainer}>
