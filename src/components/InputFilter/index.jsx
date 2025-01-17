@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import styles from './styles.module.css'
 
-const ITEM_HEIGHT = 48
+const ITEM_HEIGHT = 40
 const ITEM_PADDING_TOP = 8
 const MenuProps = {
   PaperProps: {
@@ -51,11 +51,7 @@ export default function InputFilter() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.label}>
-        <img src="/filterIcon.png" alt="" />
-        <span>Filtrar por: </span>
-      </div>
-      <FormControl sx={{ width: 300 }}>
+      <FormControl sx={{ width: '100%' }}>
         <Select
           multiple
           displayEmpty
@@ -64,7 +60,7 @@ export default function InputFilter() {
           input={<OutlinedInput />}
           renderValue={(selected) => {
             if (selected.length === 0) {
-              return <em>Selecione</em>
+              return <em>Filtrar Por</em>
             }
 
             return selected.join(', ')
