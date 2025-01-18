@@ -11,6 +11,7 @@ import InputSearch from '../../components/InputSearch'
 import InputFilter from '../../components/InputFilter'
 import CardPokemon from '../../components/CardPokemon'
 import styles from './styles.module.css'
+import CardDetailsPokemon from '../../components/CardDetailsPokemon'
 
 const style = {
   position: 'absolute',
@@ -22,7 +23,8 @@ const style = {
   borderRadius: '10px',
   outline: 'none',
   boxShadow: 24,
-  p: 4,
+  overflow: 'hidden',
+  width: '80%'
 }
 
 const Home = () => {
@@ -131,7 +133,9 @@ const Home = () => {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}></Box>
+          <Box sx={style}>
+            <CardDetailsPokemon />
+          </Box>
         </Fade>
       </Modal>
     </main>
