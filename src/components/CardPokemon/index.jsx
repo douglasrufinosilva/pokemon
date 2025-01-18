@@ -14,7 +14,7 @@ const CardPokemon = ({ pokemon }) => {
         </div>
         <div className={styles.infoLabel}>
           <img src={pokemon.set.images.symbol} alt={pokemon.set.name} />
-          <span>{pokemon.types[0] ? pokemon.types[0] : 'Sem informação'}</span>
+          <span>{pokemon.types?.[0] ?? 'Sem informação'}</span>
         </div>
       </div>
     </div>

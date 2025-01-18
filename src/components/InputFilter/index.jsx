@@ -1,10 +1,10 @@
-import * as React from 'react'
-import { useTheme } from '@mui/material/styles'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import styles from './styles.module.css'
+import { PokemonContext } from '../../contexts/PokemonContext'
+import { useContext } from 'react'
 
 const ITEM_HEIGHT = 40
 const ITEM_PADDING_TOP = 8
@@ -17,65 +17,51 @@ const MenuProps = {
   },
 }
 
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+const orderType = [
+  {
+    name: 'Mais recentes',
+    value: 'set.releaseDate',
+  },
+  {
+    name: 'Mais antigos',
+    value: '-set.releaseDate',
+  },
+  {
+    name: 'Nome A - Z',
+    value: 'name',
+  },
+  {
+    name: 'Nome Z - A',
+    value: '-name',
+  },
 ]
 
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight: personName.includes(name)
-      ? theme.typography.fontWeightMedium
-      : theme.typography.fontWeightRegular,
-  }
-}
-
 export default function InputFilter() {
-  const theme = useTheme()
-  const [personName, setPersonName] = React.useState([])
+  const { changeOrderBy, orderBy } = useContext(PokemonContext)
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event
-    setPersonName(typeof value === 'string' ? value.split(',') : value)
-  }
+  const selectedOrderBy = orderBy || 'set.releaseDate'
 
   return (
     <div className={styles.container}>
       <FormControl sx={{ width: '100%' }}>
         <Select
-          multiple
           displayEmpty
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput />}
-          renderValue={(selected) => {
-            if (selected.length === 0) {
-              return <em>Filtrar Por</em>
-            }
-
-            return selected.join(', ')
+          onChange={(e) => {
+            changeOrderBy(e.target.value)
           }}
+          value={selectedOrderBy}
+          input={<OutlinedInput />}
           sx={{ fontSize: '1.4rem' }}
           MenuProps={MenuProps}
           inputProps={{ 'aria-label': 'Without label' }}
         >
-          {names.map((name) => (
+          {orderType.map((order) => (
             <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
+              sx={{ fontSize: '1.3rem' }}
+              key={order.name}
+              value={order.value}
             >
-              {name}
+              {order.name}
             </MenuItem>
           ))}
         </Select>

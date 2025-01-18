@@ -9,6 +9,7 @@ const PokemonProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [filter, setFilter] = useState('')
+  const [orderBy, setOrderBy] = useState('')
   const [totalPokemons, setTotalPokemons] = useState(0)
   const [pokemonsPerPage] = useState(24)
 
@@ -18,8 +19,13 @@ const PokemonProvider = ({ children }) => {
     setLoading(true)
 
     let url = `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${pokemonsPerPage}`
+
     if (filter) {
       url += `&q=name:${filter}`
+    }
+
+    if (orderBy) {
+      url += `&orderBy=${orderBy}`
     }
 
     fetch(url, {
@@ -37,7 +43,7 @@ const PokemonProvider = ({ children }) => {
         console.log(`Erro ao buscar os dados: ${error}`)
         setLoading(false)
       })
-  }, [page, filter, pokemonsPerPage])
+  }, [page, filter, pokemonsPerPage, orderBy])
 
   const changePage = (value) => {
     setPage(value)
@@ -45,6 +51,11 @@ const PokemonProvider = ({ children }) => {
 
   const changeFilter = (newFilter) => {
     setFilter(newFilter)
+    setPage(1)
+  }
+
+  const changeOrderBy = (order) => {
+    setOrderBy(order)
     setPage(1)
   }
 
@@ -57,7 +68,9 @@ const PokemonProvider = ({ children }) => {
         totalPokemons,
         changePage,
         changeFilter,
+        changeOrderBy,
         pokemonsPerPage,
+        orderBy,
       }}
     >
       {children}
