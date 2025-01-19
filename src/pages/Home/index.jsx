@@ -24,7 +24,7 @@ const style = {
   outline: 'none',
   boxShadow: 24,
   overflow: 'hidden',
-  width: '80%'
+  width: '80%',
 }
 
 const Home = () => {
@@ -134,7 +134,7 @@ const Home = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <CardDetailsPokemon />
+            <CardDetailsPokemon pokemon={pokemon} />
           </Box>
         </Fade>
       </Modal>

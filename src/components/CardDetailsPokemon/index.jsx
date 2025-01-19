@@ -1,16 +1,15 @@
 import styles from './styles.module.css'
 
-const CardDetailsPokemon = () => {
+const CardDetailsPokemon = ({ pokemon }) => {
   return (
     <div className={styles.container}>
       <div className={styles.cardHeader}>
-        <span>Nome</span>
-        <span>Nivel</span>
-        <span>Hp</span>
+        <span>{pokemon.name}</span>
+        <span>Hp: {pokemon.hp}</span>
       </div>
       <div className={styles.cardBody}>
         <div className={styles.imgContainer}>
-          <img src="/logo.svg" alt="" />
+          <img src={pokemon.images.large} alt="" />
         </div>
         <div className={styles.details}>
           <div className={styles.badge}>
