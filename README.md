@@ -1,8 +1,35 @@
-# React + Vite
+## Pokémon TCG Explorer
+Uma aplicação que utiliza a API do Pokémon TCG para explorar cartas do jogo Pokémon TCG. Com esta aplicação, você pode buscar cartas, visualizar detalhes, e descobrir mais sobre o universo Pokémon TCG.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 📋 Funcionalidades
+Busca de cartas: Pesquise por cartas usando filtros e campo de busca. 
 
-Currently, two official plugins are available:
+Visualização de detalhes: Veja informações detalhadas de cada carta, como ataques, habilidades e valores de energia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Interface amigável: Uma interface interativa para facilitar a exploração.
+
+### 🚀 Tecnologias
+Front-end: React
+
+API: Pokémon TCG API
+
+### 📦 Instalação
+Clone o repositório:
+
+git clone https://github.com/douglasrufinosilva/pokemon.git
+
+npm install ou yarn install
+
+npm run dev
+
+
+### ⚙️ Configuração da API
+A aplicação utiliza a Pokémon TCG API. Certifique-se de seguir os passos abaixo para configurá-la:
+
+Crie uma conta em pokemontcg.io.
+
+Obtenha uma chave de API (API Key) no painel do usuário.
+
+Adicione a chave ao projeto em um arquivo .env:
+
+VITE_API_KEY='chave da API'
