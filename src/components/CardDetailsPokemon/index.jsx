@@ -1,15 +1,21 @@
 import styles from './styles.module.css'
 
 const CardDetailsPokemon = ({ pokemon, handleClose }) => {
-  const { name, hp, images, artist, rarity, supertype, tcgplayer, flavorText } =
-    pokemon
+  const {
+    id,
+    name,
+    hp,
+    images,
+    artist,
+    rarity,
+    supertype,
+    tcgplayer,
+    flavorText,
+  } = pokemon
 
   return (
     <div className={styles.container}>
-      <div className={styles.cardHeader}>
-        <span>{name}</span>
-        <span>Hp: {hp}</span>
-      </div>
+      <div className={styles.cardHeader}>{name && <span>{name}</span>}</div>
       <div className={styles.cardBody}>
         <div className={styles.imgContainer}>
           <img
@@ -20,8 +26,8 @@ const CardDetailsPokemon = ({ pokemon, handleClose }) => {
         </div>
         <div className={styles.details}>
           <div className={styles.badge}>
-            {artist && <span>{artist}</span>}
-            {rarity && <span>{rarity}</span>}
+            {hp && <span>Hp: {hp}</span>}
+            {id && <span>ID: {id}</span>}
           </div>
 
           <div className={styles.infoContainer}>

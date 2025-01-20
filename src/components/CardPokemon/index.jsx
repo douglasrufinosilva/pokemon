@@ -9,17 +9,17 @@ const CardPokemon = ({ pokemon }) => {
           src={
             pokemon?.images?.large ? pokemon.images.large : '/naodisponivel.png'
           }
-          alt={pokemon.name}
+          alt={`Imagem do ${pokemon.name}`}
         />
       </div>
       <div className={styles.cardBody}>
         <div className={styles.label}>
-          <h3>{pokemon.name}</h3>
-          <span>{pokemon.rarity ? pokemon.rarity : 'Sem informação'}</span>
+          {pokemon.name && <h3>{pokemon.name}</h3>}
+          <span>{pokemon.rarity || 'Sem informação'}</span>
         </div>
         <div className={styles.infoLabel}>
           <img src={pokemon.set.images.symbol} alt={pokemon.set.name} />
-          <span>{pokemon.types?.[0] ?? 'Sem informação'}</span>
+          <span>{pokemon.types?.[0] || 'Sem informação'}</span>
         </div>
       </div>
     </div>
