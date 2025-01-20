@@ -23,7 +23,7 @@ const style = {
   outline: 'none',
   boxShadow: 24,
   overflow: 'hidden',
-  width: '80%',
+  width: '90%',
   maxWidth: '400px',
 }
 
