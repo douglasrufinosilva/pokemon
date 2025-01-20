@@ -18,13 +18,13 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '50%',
   bgcolor: '#FFFFFF',
   borderRadius: '10px',
   outline: 'none',
   boxShadow: 24,
   overflow: 'hidden',
   width: '80%',
+  maxWidth: '400px',
 }
 
 const Home = () => {
@@ -134,7 +134,7 @@ const Home = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <CardDetailsPokemon pokemon={pokemon} />
+            <CardDetailsPokemon handleClose={handleClose} pokemon={pokemon} />
           </Box>
         </Fade>
       </Modal>

@@ -5,7 +5,12 @@ const CardPokemon = ({ pokemon }) => {
   return (
     <div className={styles.cardContainer} key={pokemon.id}>
       <div className={styles.imageContainer}>
-        <img src={pokemon.images.large} alt={pokemon.name} />
+        <img
+          src={
+            pokemon?.images?.large ? pokemon.images.large : '/naodisponivel.png'
+          }
+          alt={pokemon.name}
+        />
       </div>
       <div className={styles.cardBody}>
         <div className={styles.label}>

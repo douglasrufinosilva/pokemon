@@ -33,21 +33,28 @@
 
   border: 3px solid #AFB1B6;
   border-radius: 15px;
-
-  background-color: blue;
 }
 
-.imgContainer img {
+.hasImage {
   width: 100%;
 
   scale: 1.8;
   top: 65px;
   position: relative;
+}
 
+.hasNoImage {
+  scale: 1;
+  top: 0;
+  position: static;
 }
 
 .details {
+  width: 100%;
   padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .badge {
@@ -64,8 +71,8 @@
   }
 }
 
-.hability {
-  width: 250px;
+.infoContainer {
+  width: 300px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -73,24 +80,32 @@
   margin-bottom: 2rem;
 }
 
-.infoContainer {
+.info {
+  width: 100%;
+  height: 50px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   row-gap: 1rem;
-  padding: .5rem 3rem;
 }
 
-.infoContainer+.infoContainer {
+.info+.info {
   border-left: 1px solid #E0E0E0;
 }
 
-.titleHability {
+.infoTitle {
   font-weight: 600;
+  font-size: 1.2rem;
 }
 
-.habilityDetails {
+.description {
+  text-align: center;
+
   span {
     font-weight: 600;
+    font-size: 1.2rem;
   }
 
   p {
@@ -98,13 +113,27 @@
   }
 }
 
-.cardNumber {
+.linkBuyCard {
+  width: 100%;
   background-color: #D4D7DE;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
   border-radius: 8px;
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+.linkBuyCard.hasLink {
+  cursor: pointer;
+}
+
+.linkBuyCard.hasNoLink {
+  cursor: not-allowed;
 }
 
 .cardFooter {
@@ -123,4 +152,6 @@
 
   border: 0;
   outline: 0;
+
+  cursor: pointer;
 }

@@ -1,53 +1,67 @@
 import styles from './styles.module.css'
 
-const CardDetailsPokemon = ({ pokemon }) => {
+const CardDetailsPokemon = ({ pokemon, handleClose }) => {
+  const { name, hp, images, artist, rarity, supertype, tcgplayer, flavorText } =
+    pokemon
+
   return (
     <div className={styles.container}>
       <div className={styles.cardHeader}>
-        <span>{pokemon.name}</span>
-        <span>Hp: {pokemon.hp}</span>
+        <span>{name}</span>
+        <span>Hp: {hp}</span>
       </div>
       <div className={styles.cardBody}>
         <div className={styles.imgContainer}>
-          <img src={pokemon.images.large} alt="" />
+          <img
+            className={images?.large ? styles.hasImage : styles.hasNoImage}
+            src={images?.large || '/naodisponivel.png'}
+            alt={`Imagem do ${name}`}
+          />
         </div>
         <div className={styles.details}>
           <div className={styles.badge}>
-            <span>tipo</span>
-            <span>forma</span>
+            {artist && <span>{artist}</span>}
+            {rarity && <span>{rarity}</span>}
           </div>
 
-          <div className={styles.hability}>
-            <div className={styles.infoContainer}>
-              <span className={styles.titleHability}>info</span>
-              <span>info</span>
+          <div className={styles.infoContainer}>
+            <div className={styles.info}>
+              <span className={styles.infoTitle}>Supertipo</span>
+              <span>{supertype || 'Não especificado'}</span>
             </div>
-            <div className={styles.infoContainer}>
-              <span className={styles.titleHability}>info</span>
-              <span>info</span>
+            <div className={styles.info}>
+              <span className={styles.infoTitle}>Raridade</span>
+              <span>{rarity || 'Desconhecida'}</span>
             </div>
-            <div className={styles.infoContainer}>
-              <span className={styles.titleHability}>info</span>
-              <span>info</span>
+            <div className={styles.info}>
+              <span className={styles.infoTitle}>Artista</span>
+              <span>{artist || 'Desconhecido'}</span>
             </div>
           </div>
 
-          <div className={styles.habilityDetails}>
-            <span>Habilidade</span>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque a
-              magnam totam repellendus placeat ad, temporibus incidunt quae!
-              Porro harum voluptas perferendis atque vel eveniet consequuntur
-              voluptates! Dicta, asperiores rerum!
-            </p>
+          <div className={styles.description}>
+            <span>Descrição</span>
+            <p>{flavorText || 'Descrição não disponível.'}</p>
           </div>
 
-          <div className={styles.cardNumber}>
-            <span>Numero da carta</span>
+          <div
+            className={`${styles.linkBuyCard} ${
+              tcgplayer?.url ? styles.hasLink : styles.hasNoLink
+            }`}
+          >
+            {tcgplayer?.url ? (
+              <a href={tcgplayer.url} target="_blank" rel="noreferrer noopener">
+                Adquirir carta
+              </a>
+            ) : (
+              <span>Link para compra indisponível</span>
+            )}
           </div>
 
           <div className={styles.cardFooter}>
-            <button className={styles.btnClose}>Fechar</button>
+            <button onClick={handleClose} className={styles.btnClose}>
+              Fechar
+            </button>
           </div>
         </div>
       </div>
