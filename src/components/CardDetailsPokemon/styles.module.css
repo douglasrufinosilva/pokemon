@@ -125,6 +125,7 @@
   a {
     text-decoration: none;
     color: #000000;
+    font-weight: 500;
   }
 }
 
@@ -149,9 +150,58 @@
   padding: 5px 10px;
   border-radius: 8px;
   font-size: 1.2rem;
+  font-weight: 500;
 
   border: 0;
   outline: 0;
 
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cardHeader {
+    height: 50px;
+
+    span {
+      font-size: 1.6rem;
+    }
+  }
+
+  .badge {
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  .infoContainer {
+    width: 350px;
+  }
+
+  .infoTitle {
+    font-size: 1.3rem;
+  }
+
+  .info {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    span {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .linkBuyCard {
+    a {
+      font-size: 1.3rem;
+    }
+  }
+
+  .btnClose {
+    font-size: 1.3rem;
+  }
 }
