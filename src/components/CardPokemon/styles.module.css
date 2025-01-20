@@ -71,6 +71,7 @@
 @media (min-width: 768px) {
   .cardBody {
     padding: 0 15px;
+    height: 70px;
   }
 
   .label {
